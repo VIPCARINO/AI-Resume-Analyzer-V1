@@ -17,8 +17,8 @@ st.markdown("**Upload your resume and get a summary, key skills score and improv
 uploaded_file = st.file_uploader("Upload your resume", type=["pdf"])
 
 if uploaded_file:
-    pdf_bytes = uploaded_file.read()
-    pdf = fitz.open(stream=pdf_bytes, filetype="pdf")
+    uploaded_file.seek(0)
+    pdf = fitz.open(stream=uploaded_file.read(), filetype="pdf")
     text = ""
     for page in pdf: # pdf.pages:
         page_text = page.get_text() # extract_text()
@@ -33,7 +33,7 @@ if uploaded_file:
         #base64_pdf = base64.b64encode(uploaded_file.read()).decode('utf-8')
         #pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000"></iframe>'
         #st.markdown(pdf_display, unsafe_allow_html=True)
-        st.pdf(pdf_bytes)
+        st.pdf(uploaded_file)
 
     with col2:
         st.subheader("AI analysis")
