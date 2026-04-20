@@ -75,7 +75,7 @@ if uploaded_file:
                 # ----------Comment from here to run locally ------------- #
                 client = genai.Client()
                 response = client.models.generate_content(
-                    model="gemini-3-flash-preview",
+                    model="gemini-2.5-flash-lite",
                     contents=prompt
                 )
 
