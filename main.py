@@ -30,9 +30,10 @@ if uploaded_file:
 
     with col1:
         st.subheader("Resume Preview")
-        base64_pdf = base64.b64encode(uploaded_file.read()).decode('utf-8')
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
+        #base64_pdf = base64.b64encode(uploaded_file.read()).decode('utf-8')
+        #pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000"></iframe>'
+        #st.markdown(pdf_display, unsafe_allow_html=True)
+        st.pdf(uploaded_file)
 
     with col2:
         st.subheader("AI analysis")
