@@ -30,7 +30,7 @@ This is an interactive web application built with Streamlit. It allows users to 
 
 1. Clone this repository or download it as a zip file.
 2. Install all required dependencies by running `pip install -r requirements.txt`.
-3. Run the application using `streamlit run app.py`.
+3. Run the application using `streamlit run main.py`.
 4. Upload your resume in PDF format and click "Analyze Resume" to get your analysis results.
 
 Make sure you have ollama installed in your system to run this locally or use the **Open AI API** by changing the ollama part of the code.
